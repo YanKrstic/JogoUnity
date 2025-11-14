@@ -8,6 +8,7 @@ public class ControlePersonagem : MonoBehaviour
     private Rigidbody2D rb;
 
     public Transform groundCheck;
+    public Transform groundCheck2;
     public LayerMask groundLayer;
 
     private bool isGrounded;
@@ -26,7 +27,7 @@ public class ControlePersonagem : MonoBehaviour
 
         moveX = Input.GetAxisRaw("Horizontal");
 
-        isGrounded = Physics2D.OverlapCircle(groundCheck.position, 0.1f, groundLayer);
+        isGrounded = Physics2D.OverlapCircle(groundCheck.position, 0.1f, groundLayer) || Physics2D.OverlapCircle(groundCheck2.position, 0.1f, groundLayer);
 
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
