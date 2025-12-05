@@ -34,6 +34,20 @@ public class ControlePersonagem : MonoBehaviour
             Jump();
         }
         Move();
+
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            rb.gravityScale *= -1;
+
+            transform.localScale = new Vector3(
+            transform.localScale.x,
+            transform.localScale.y * -1,
+            transform.localScale.z
+            );
+
+            JumpForce = -JumpForce;
+        }
+
     }
 
     void Move()
