@@ -16,6 +16,11 @@ public class ControlePersonagem : MonoBehaviour
     public Transform visual;
     private Animator anim;
 
+    // minha var:
+    public bool grav;
+
+    public HealthBar healthBar;
+
     void Start()
     {
         rb = this.GetComponent<Rigidbody2D>();
@@ -35,7 +40,7 @@ public class ControlePersonagem : MonoBehaviour
         }
         Move();
 
-        if (Input.GetKeyDown(KeyCode.G))
+        if (Input.GetKeyDown(KeyCode.G) && grav)
         {
             rb.gravityScale *= -1;
 
@@ -46,6 +51,9 @@ public class ControlePersonagem : MonoBehaviour
             );
 
             JumpForce = -JumpForce;
+
+            grav = false;
+            healthBar.GetComponent<Image>().color = Color.green;
         }
 
     }
