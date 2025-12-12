@@ -10,13 +10,13 @@ public class GravPoint : MonoBehaviour
         {
             Debug.Log("Grav colhido");
 
-            // Pegando o componente do Player
             ControlePersonagem pc = other.GetComponent<ControlePersonagem>();
 
-            // Verificando se ele existe
             if (pc != null)
             {
-                pc.grav = true;  // ✔ Agora você altera a variável
+                pc.grav = true;
+                //pc.healthBar.GetComponent<Image>().color = Color.blue;
+                pc.healthBar.UpdateColorBlue();
             }
             else
             {

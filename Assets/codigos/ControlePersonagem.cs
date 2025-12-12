@@ -53,7 +53,7 @@ public class ControlePersonagem : MonoBehaviour
             JumpForce = -JumpForce;
 
             grav = false;
-            healthBar.GetComponent<Image>().color = Color.green;
+            healthBar.UpdateColorGreen();
         }
 
     }

@@ -14,4 +14,13 @@ public class HealthBar : MonoBehaviour
     {
         healthBarFill.fillAmount = currentHealth / maxHealth;
     }
+
+    public void UpdateColorGreen()
+    {
+        healthBarFill.color = Color.green;
+    }
+    public void UpdateColorBlue()
+    {
+        healthBarFill.color = Color.blue;
+    }
 }
